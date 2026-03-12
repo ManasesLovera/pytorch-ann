@@ -9,6 +9,22 @@ The focus is practical:
 - learn when to use MLPs, CNNs, RNNs, LSTMs, and Transformers
 - build small runnable examples instead of only reading theory
 
+## Prerequisites
+
+This learning guide assumes you already have some basic background in:
+
+- machine learning fundamentals
+- basic NLP concepts
+
+Examples of useful prior knowledge:
+
+- features, labels, training, validation, and testing
+- classification and regression
+- overfitting and generalization
+- tokenization, embeddings, and sequence data at a beginner level
+
+This repository is focused on neural networks with PyTorch, so it is meant to build on top of that foundation rather than replace it.
+
 ## Current focus
 
 Right now this repo includes:
