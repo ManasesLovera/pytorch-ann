@@ -1,9 +1,12 @@
 [project]
-name = "torch"
+name = "pytorch-ann"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "ipykernel>=7.2.0",
+    "pandas>=3.0.2",
+    "scikit-learn>=1.8.0",
+    "torch>=2.11.0",
 ]
