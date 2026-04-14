@@ -20,8 +20,8 @@
 - [x] **Task 3: Binary classification use-case** (`learning/mlp/use-cases/binary_classification.py`)
   - [x] Implement a full training and evaluation loop.
   - [x] Add an "Inference" section to test the model on new inputs.
-- [ ] **Task 4: Documentation updates**
-  - [ ] Add "Shapes & Dimensions" section to `learning/mlp/README.md`.
+- [x] **Task 4: Documentation updates**
+  - [x] Add "Shapes & Dimensions" section to `learning/mlp/README.md`.
 
 ### Phase 2: CNN (Convolutional Neural Networks)
 - [ ] Create `learning/cnn/README.md` with core concepts.
@@ -38,3 +38,4 @@
 - [x] CUDA availability verified (`test.py`).
 - [x] Basic CUDA tensor operations documented (`cuda_basics.py`).
 - [x] Conceptual MLP guide written (`learning/mlp/README.md`).
+- [x] **Phase 1: MLP (Multi-Layer Perceptron)** completed with foundational scripts, datasets, and use-cases.

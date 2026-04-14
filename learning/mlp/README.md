@@ -303,12 +303,31 @@ A small MLP often looks like this:
 Input -> Linear -> ReLU -> Linear -> ReLU -> Linear -> Output
 ```
 
-Example:
+## Shapes & Dimensions
 
-- input features: 10
-- hidden layer 1: 64 neurons
-- hidden layer 2: 32 neurons
-- output: 1 value for regression or several values for classification
+Understanding tensor shapes is the most common challenge when building MLPs in PyTorch.
+
+### 1. The Input Shape
+An MLP expects a 2D tensor of shape `(batch_size, num_features)`.
+- **`batch_size`**: Number of examples processed at once (e.g., 32).
+- **`num_features`**: Number of input variables per example (e.g., 4 for Iris).
+
+If you have a single example, it must still be 2D: `(1, num_features)`.
+
+### 2. Linear Layer Dimensions
+A `nn.Linear(in_features, out_features)` layer requires:
+- The input tensor's last dimension must match `in_features`.
+- The layer will produce an output tensor of shape `(batch_size, out_features)`.
+
+### 3. Stacking Layers
+When stacking layers, the `out_features` of one layer MUST match the `in_features` of the next:
+- `layer1 = nn.Linear(4, 16)`
+- `layer2 = nn.Linear(16, 8)`  <-- 16 matches!
+
+### 4. The Output Shape
+- **Binary Classification**: Typically `(batch_size, 1)` with `Sigmoid`.
+- **Multi-class Classification**: `(batch_size, num_classes)` with `CrossEntropyLoss`.
+- **Regression**: `(batch_size, 1)` (or more if predicting multiple values).
 
 ## MLP use cases
 
