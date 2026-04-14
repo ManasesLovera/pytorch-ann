@@ -17,9 +17,9 @@
   - [x] Use `scikit-learn` to fetch the Iris dataset.
   - [x] Implement `StandardScaler` for feature normalization.
   - [x] Wrap in a PyTorch `DataLoader`.
-- [ ] **Task 3: Binary classification use-case** (`learning/mlp/use-cases/binary_classification.py`)
-  - [ ] Implement a full training and evaluation loop.
-  - [ ] Add an "Inference" section to test the model on new inputs.
+- [x] **Task 3: Binary classification use-case** (`learning/mlp/use-cases/binary_classification.py`)
+  - [x] Implement a full training and evaluation loop.
+  - [x] Add an "Inference" section to test the model on new inputs.
 - [ ] **Task 4: Documentation updates**
   - [ ] Add "Shapes & Dimensions" section to `learning/mlp/README.md`.
 
