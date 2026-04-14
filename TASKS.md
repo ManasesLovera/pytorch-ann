@@ -10,18 +10,16 @@
 
 ### Phase 1: MLP (Multi-Layer Perceptron)
 - [x] **Task 1: Basic training script** (`learning/mlp/train_basic.py`)
-  - [x] Implement `nn.Module` class for the architecture.
-  - [x] Include automatic CUDA device selection.
-  - [x] Use synthetic data for a zero-setup run.
 - [x] **Task 2: Real dataset loader** (`learning/mlp/datasets/iris_loader.py`)
-  - [x] Use `scikit-learn` to fetch the Iris dataset.
-  - [x] Implement `StandardScaler` for feature normalization.
-  - [x] Wrap in a PyTorch `DataLoader`.
 - [x] **Task 3: Binary classification use-case** (`learning/mlp/use-cases/binary_classification.py`)
-  - [x] Implement a full training and evaluation loop.
-  - [x] Add an "Inference" section to test the model on new inputs.
-- [x] **Task 4: Documentation updates**
-  - [x] Add "Shapes & Dimensions" section to `learning/mlp/README.md`.
+- [x] **Task 4: Documentation updates** (Shapes & Dimensions)
+- [x] **Task 5: Expand use cases and datasets**
+  - [x] Research and add use cases where MLPs provide a significant advantage.
+  - [x] Identify datasets where MLPs typically outperform classic ML models.
+  - [x] Update `learning/mlp/README.md` with these findings.
+- [ ] **Task 6: Complete Spanish translation**
+  - [ ] Synchronize `learning/mlp/README-es.md` with the full content of the English version.
+  - [ ] Ensure "zero-background" concepts are translated with high clarity.
 
 ### Phase 2: CNN (Convolutional Neural Networks)
 - [ ] Create `learning/cnn/README.md` with core concepts.

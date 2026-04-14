@@ -335,22 +335,22 @@ MLPs are most useful when your data is already in a fixed-size feature vector.
 
 Common use cases:
 
-- **Tabular classification**
+- **Tabular classification and regression**
   - fraud detection
   - customer churn prediction
-  - credit approval
-  - medical risk prediction
-
-- **Tabular regression**
   - house price prediction
-  - demand forecasting from structured features
-  - insurance cost estimation
 
-- **Simple recommendation or ranking features**
-  - predicting click probability from engineered features
+- **Multi-modal embeddings fusion**
+  - Combining output features from different models (e.g., text and image embeddings) into a single classification.
 
-- **Baseline model**
-  - a strong first model before moving to more complex architectures
+- **Non-linear Feature Interaction Learning**
+  - When you have a small set of features (e.g., < 100) but suspect the relationship between them and the output is highly complex and non-linear.
+
+- **Online Learning and Large Scale**
+  - MLPs can be trained incrementally (mini-batch) on massive datasets that don't fit in memory, whereas some classic models like SVM or certain Tree implementations can be memory-intensive.
+
+- **Knowledge Distillation / Student Models**
+  - Large complex models (like deep Transformers or ensembles) are often "compressed" into a small MLP student that is much faster to run in production while retaining most of the performance.
 
 MLPs are usually **not** the best first choice for:
 
@@ -358,6 +358,31 @@ MLPs are usually **not** the best first choice for:
 - long text sequences
 - audio waveforms
 - very long time series with temporal dependencies
+
+For those, CNNs, RNNs/LSTMs, or Transformers are usually better fits.
+
+## When MLPs often beat classic ML
+
+While Random Forests and XGBoost are "kings of tabular data," MLPs can often take the lead in these specific scenarios:
+
+### 1. High-Dimensional Tabular Data with Hidden Patterns
+When the relationship between features isn't just "if feature X > threshold," but involves a complex "weighted blend" of all features simultaneously.
+- **Example**: Financial market volatility prediction where many small signals interact in a continuous way.
+
+### 2. Deep Feature Extraction and Representation Learning
+Classic models work on the features you give them. MLPs **create new features** in their hidden layers. If the "raw" features are not very useful alone but can be combined into powerful internal representations, an MLP will win.
+- **Dataset Example**: **MNIST** (when treated as a flat 784-pixel vector). While you *can* run a Random Forest on pixels, an MLP's hidden layers can learn to group pixels into "strokes" or "curves" internally.
+
+### 3. Training on Massive Datasets (Millions of rows)
+Classic tree-based models (like Random Forest) can become extremely slow to build as the number of rows grows because they need to evaluate many split points. MLPs thrive here using **Stochastic Gradient Descent (SGD)**, which only looks at a small batch at a time.
+- **Dataset Example**: **Higgs Boson Dataset** (7 million+ rows). Large-scale physics data often benefits from the smooth, non-linear boundaries an MLP creates.
+
+### 4. Continuous Input/Output Spaces
+If your inputs and outputs are continuous and you need a smooth, differentiable function (rather than a "step" function like a Decision Tree provides), an MLP is the superior choice.
+- **Dataset Example**: **Inverse Kinematics** in Robotics. Mapping $(x, y, z)$ coordinates to a continuous set of motor angles.
+
+### 5. Multi-Output Tasks
+If you need to predict multiple related values at once (e.g., predicting 10 different weather metrics simultaneously), a single MLP can learn a shared internal representation for all of them, whereas most classic ML models require training one separate model per output.
 
 For those, CNNs, RNNs/LSTMs, or Transformers are usually better fits.
 
