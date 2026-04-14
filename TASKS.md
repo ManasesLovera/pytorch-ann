@@ -17,9 +17,9 @@
   - [x] Research and add use cases where MLPs provide a significant advantage.
   - [x] Identify datasets where MLPs typically outperform classic ML models.
   - [x] Update `learning/mlp/README.md` with these findings.
-- [ ] **Task 6: Complete Spanish translation**
-  - [ ] Synchronize `learning/mlp/README-es.md` with the full content of the English version.
-  - [ ] Ensure "zero-background" concepts are translated with high clarity.
+- [x] **Task 6: Complete Spanish translation**
+  - [x] Synchronize `learning/mlp/README-es.md` with the full content of the English version.
+  - [x] Ensure "zero-background" concepts are translated with high clarity.
 
 ### Phase 2: CNN (Convolutional Neural Networks)
 - [ ] Create `learning/cnn/README.md` with core concepts.
